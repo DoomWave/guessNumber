@@ -27,3 +27,24 @@ def run_game():
         if blanks == 0:
             print('you got it!')
             break
+
+        guess:  str = input('Enter a letter: ')
+
+        if guess in guessed:
+            print(f'You already used: "{guess}". Please try with another letter!')
+            continue
+
+        guessed += guess
+
+        if guess not in word:
+            tries -= 1
+            print(f'sorry, that was wrong... ({tries} tries remaining)')
+
+            if tries == 0:
+                print('No more tries remaining... You lose')
+                break
+
+
+
+    if __name__ == ' __main__':
+        run_game()
